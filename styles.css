@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Nova";
+  src: url(fonts/NovaSquare-Regular.ttf);
+}
 * {
   padding: 0;
   margin: 0;
@@ -7,7 +11,8 @@
 body {
   height: 100vh;
   display: flex;
-  background: #060AB2;
+  background:white;
+  background-color: gray;
 }
 
 .memory-game {
@@ -17,6 +22,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
+  grid-area: jeux;
 }
 
 .memory-card {
@@ -52,4 +58,103 @@ body {
 
 .front-face {
   transform: rotateY(180deg);
+}
+
+.bas{
+  width: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  'inspiration nom image'
+  'lien groupe image';
+  grid-area: interface;
+  
+
+  
+}
+
+.maincontainer{
+  margin: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 2fr 0.2fr;
+  grid-template-areas:
+  'jeux temps'
+  'interface interface';
+  
+
+}
+.inspiration{
+  grid-area: inspiration;
+  display: flex;
+  justify-content: flex-start;
+}
+.groupe{
+  grid-area: groupe;
+  display: flex;
+  justify-content: center;
+}
+.nom{
+  grid-area: nom;
+  display: flex;
+  justify-content: center;
+}
+.image{
+  grid-area: image;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+.lien{
+  grid-area: lien;
+  display: flex;
+  justify-content: flex-start;
+}
+#timer {
+  font-size:65px;
+  margin:0 auto;
+  width:250px;
+}
+
+#boutonClick {
+  margin:0 auto;
+  width:200px;    
+}
+
+#boutonClick button {
+  font-size:24px;
+}
+.memory-card.hidden {
+  transform: scale(0); 
+  opacity: 0; 
+  transition: transform 1s ease, opacity 0.2s ease; 
+}
+.timer{
+  margin: 0%;
+  grid-area: temps;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+  
+}
+#start{
+  width: 300px;
+  height: 200px;
+  font-size: 50px;
+  font-family: "Nova";
+  background-color: beige;
+  border: 2px solid;
+  box-shadow: 4px 4px 4px red;
+}
+#timerCompter{
+  width: 80px;
+  height: 200px;
+  font-size: 60px;
+  text-align: center;
+  border: 2px solid;
+  box-shadow: 4px 4px 4px red;
 }
